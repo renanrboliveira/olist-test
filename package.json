@@ -4,7 +4,7 @@
   "description": "This is a boilerplate for react and redux",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "webpack-dev-server --config ./config/webpack.config.dev.js  --hot --open --colors",
     "build": "webpack --config ./config/webpack.config.prod.js --progress --profile --colors",
     "build:production": "cross-env SERVER_ENV=production npm run build",
@@ -76,7 +76,6 @@
   "dependencies": {
     "formik": "^0.11.11",
     "lodash": "^4.17.5",
-    "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -88,6 +87,7 @@
       "^.+\\.js$": "babel-jest",
       "^.+\\.(css|scss|less)$": "jest-css-modules"
     },
+    "verbose": true,
     "globals": {
       "NODE_ENV": "test"
     },

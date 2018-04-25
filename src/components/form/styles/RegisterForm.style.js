@@ -19,7 +19,6 @@ export const Form = styled.form`
   > input:last-child {
     margin-bottom: 2rem;
   }
-  ${props => console.log(props)}
   ${props => !props.isValid && wiggle}
 `
 
@@ -50,30 +49,12 @@ export const FieldForm = styled.div`
   `}
 `
 
-export const LabelForm = styled.label`
-  display: block;
-  margin-bottom: .5rem;
-`
-
-export const InputForm = styled.input`
-  border: 1px solid #B6B9D0;
-  width: 100%;
-  height: 2.75rem;
-  box-shadow: inset 0 1px 3px #B6B9D0;
-  padding: 0.875rem;
-  &:focus {
-    outline: 1px solid ${props => props.color};
-  }
-  border-color: ${props => props.color};
-`
-
 export const MessageValidationForm = styled.div`
   display: inline-block;
   font-size: .75rem;
   color: #F79682;
   position: absolute;
   bottom: -1.25rem;
-  font-style: italic;
   left: 0;
   transition: color .15s cubic-bezier(.215,.61,.355,1);
 `
@@ -122,6 +103,7 @@ export const ItemValidation = css`
     ${props => props.error !== undefined && props.error && css`
       background-color: #1FE6A8;
     `}
+    background-color: ${props => props.isEmpty && '#EAEAF4'};
   }
 `
 

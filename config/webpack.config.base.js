@@ -48,6 +48,12 @@ const config = {
         }
       },
       {
+        test: /\.json$/,
+        use: {
+          loader: 'file-loader?name=locales/[name].[ext]'
+        }
+      },
+      {
         test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
         use: {
           loader: 'url-loader?name=media/[name].[hash:8].[ext]'
@@ -66,8 +72,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(paths.src, 'index.html'),
-      favicon: path.join(paths.src, 'favicon.ico')
+      template: path.join(paths.src, 'index.html')
     })
   ]
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import RegisterForm from '../components/form/RegisterForm'
 import { Container } from './styles/RegisterPage.style'
 
-const HomePage = () => (
+const HomePage = (props) => (
   <Container>
     <RegisterForm />
   </Container>
