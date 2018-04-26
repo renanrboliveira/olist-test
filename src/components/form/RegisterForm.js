@@ -30,6 +30,10 @@ import {
   BarItemThreeValidationForm
 } from './styles/RegisterForm.style'
 
+const validaInputColor = (erro, value) => (
+  erro ? '#F79682' : value !== '' ? '#1FE6A8' : ''
+)
+
 const InnerForm = ({
   values,
   errors,
@@ -48,16 +52,17 @@ const InnerForm = ({
     passwordOneLetter,
     passwordAtLeastSixCharacteres
   } = errors
+  console.log(touched.fullName, errors.fullName)
   return (
     <Form onSubmit={handleSubmit} error={isValid}>
       <FieldForm>
         <LabelGeneral name='fullName'>{form.fullname}</LabelGeneral>
         <InputGeneral
           name='fullName'
-          onChange={handleChange}
-          onBlur={handleBlur}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
           value={values.fullName}
-          error={errorFullName}
+          color={validaInputColor(errorFullName, values.fullName)}
         />
         {
           errorFullName &&
@@ -70,10 +75,10 @@ const InnerForm = ({
         <LabelGeneral name='email'>{form.email}</LabelGeneral>
         <InputGeneral
           name='email'
-          onChange={handleChange}
-          onBlur={handleBlur}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
           value={values.email}
-          error={errorEmail}
+          color={validaInputColor(errorEmail, values.email)}
         />
         {
           errorEmail &&
@@ -87,8 +92,8 @@ const InnerForm = ({
         <InputGeneral
           type='password'
           name='password'
-          onChange={handleChange}
-          onBlur={handleBlur}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
           value={values.password}
           color={validateColorsForm(errors)}
         />
@@ -101,17 +106,17 @@ const InnerForm = ({
       <ListValidation>
         <ItemValidationSixLetter
           isEmpty={isEmpty(values.password)}
-          error={passwordOneNumber}>
+          error={passwordAtLeastSixCharacteres}>
           {form.atLeastSixCharacteres}
         </ItemValidationSixLetter>
         <ItemValidationOneNumber
           isEmpty={isEmpty(values.password)}
-          error={passwordOneLetter}>
+          error={passwordOneNumber}>
           {form.atLeastOneNumber}
         </ItemValidationOneNumber>
         <ItemValidationOneLetter
           isEmpty={isEmpty(values.password)}
-          error={passwordAtLeastSixCharacteres}>
+          error={passwordOneLetter}>
           {form.atLeastOneLetter}
         </ItemValidationOneLetter>
       </ListValidation>
@@ -120,10 +125,10 @@ const InnerForm = ({
         <InputGeneral
           type='password'
           name='passwordConfirm'
-          onChange={handleChange}
-          onBlur={handleBlur}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
           value={values.passwordConfirm}
-          error={errorPasswordConfirm}
+          color={validaInputColor(errorPasswordConfirm, values.passwordConfirm)}
         />
         {
           errorPasswordConfirm &&
@@ -153,6 +158,7 @@ const MyForm = withFormik({
 
   validate: (values, props) => {
     const errors = {}
+
     errors.passwordOneNumber = /[0-9]/.test(values.password)
     errors.passwordOneLetter = /[A-Z]/.test(values.password)
     errors.passwordAtLeastSixCharacteres = /.{6,}/.test(values.password)

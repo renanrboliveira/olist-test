@@ -8,6 +8,7 @@ const Input = ({
   type,
   handleChange,
   handleBlur,
+  color,
   error
 }) => (
   <InputGeneral
@@ -18,9 +19,10 @@ const Input = ({
     onBlur={handleBlur}
     value={value}
     error={error}
+    color={color}
   />
 )
-
+console.log(Input)
 Input.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,

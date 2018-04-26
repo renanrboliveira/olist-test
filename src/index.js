@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 
 import App from './app'
 
-import './index.style'
+import './styles/globals.style'
 
 const renderApp = NextApp => {
   render(

@@ -1,14 +1,12 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "olist-test",
   "version": "1.0.0",
-  "description": "This is a boilerplate for react and redux",
+  "description": "This is a test for olist",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
     "start": "webpack-dev-server --config ./config/webpack.config.dev.js  --hot --open --colors",
     "build": "webpack --config ./config/webpack.config.prod.js --progress --profile --colors",
-    "build:production": "cross-env SERVER_ENV=production npm run build",
-    "build:staging": "cross-env SERVER_ENV=staging npm run build",
     "build:analyzer": "cross-env BUNDLE_ANALYZER=true npm run build",
     "lint": "eslint src",
     "format": "prettier-standard 'src/**/*.js'",
@@ -17,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codetetris/react-redux-boilerplate.git"
+    "url": "git+https://bitbucket.org/renanrboliveira/olist-test.git"
   },
   "keywords": [
     "react",
@@ -27,9 +25,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codetetris/react-redux-boilerplate/issues"
+    "url": "https://bitbucket.org/renanrboliveira/olist-test/issues"
   },
-  "homepage": "https://github.com/codetetris/react-redux-boilerplate#readme",
+  "homepage": "https://bitbucket.org/renanrboliveira/olist-test#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",

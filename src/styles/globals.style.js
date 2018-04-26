@@ -1,15 +1,15 @@
 import { injectGlobal } from 'styled-components'
 
-import SoleilRegularWoff from './assets/Soleil-Regular.woff'
-import SoleilRegularEot from './assets/Soleil-Regular.eot'
-import SoleilRegularotf from './assets/Soleil-Regular.otf'
-import SoleilRegularttf from './assets/Soleil-Regular.ttf'
-import SoleilRegularsvg from './assets/Soleil-Regular.svg'
-import SoleilBoldWoff from './assets/Soleil-Bold.woff'
-import SoleilBoldEot from './assets/Soleil-Bold.eot'
-import SoleilBoldotf from './assets/Soleil-Bold.otf'
-import SoleilBoldttf from './assets/Soleil-Bold.ttf'
-import SoleilBoldsvg from './assets/Soleil-Bold.svg'
+import SoleilRegularWoff from './../assets/Soleil-Regular.woff'
+import SoleilRegularEot from './../assets/Soleil-Regular.eot'
+import SoleilRegularotf from './../assets/Soleil-Regular.otf'
+import SoleilRegularttf from './../assets/Soleil-Regular.ttf'
+import SoleilRegularsvg from './../assets/Soleil-Regular.svg'
+import SoleilBoldWoff from './../assets/Soleil-Bold.woff'
+import SoleilBoldEot from './../assets/Soleil-Bold.eot'
+import SoleilBoldotf from './../assets/Soleil-Bold.otf'
+import SoleilBoldttf from './../assets/Soleil-Bold.ttf'
+import SoleilBoldsvg from './../assets/Soleil-Bold.svg'
 
 injectGlobal`
   @font-face {
