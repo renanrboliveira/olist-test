@@ -3,6 +3,12 @@ import PropTypes from 'prop-types'
 
 import { Button } from './styles/ButtonGeneral.style'
 
+/**
+ * A regular ButtonGeneral
+ *
+ * @example ./examples/ButtonGeneral.md
+ */
+
 const ButtonGeneral = ({ children }) => (
   <Button>
     {children}

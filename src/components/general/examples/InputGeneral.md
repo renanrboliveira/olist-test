@@ -1,0 +1,12 @@
+```js
+  <InputGeneral
+    id=''
+    type='text'
+    name=''
+    onChange=''
+    onBlur=''
+    value=''
+    error=''
+    color=''
+  />
+```

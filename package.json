@@ -62,6 +62,7 @@
     "prettier": "1.11.1",
     "prettier-standard": "^8.0.0",
     "react-hot-loader": "^4.1.0",
+    "react-styleguidist": "^7.0.8",
     "sass-loader": "^6.0.7",
     "standard-loader": "^6.0.1",
     "style-loader": "^0.20.2",

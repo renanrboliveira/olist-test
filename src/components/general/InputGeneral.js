@@ -2,6 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import InputGeneral from './styles/InputGeneral.style'
 
+/**
+ * A regular InputGeneral
+ *
+ * @example ./examples/InputGeneral.md
+ */
+
 const Input = ({
   name,
   value,
@@ -22,7 +28,7 @@ const Input = ({
     color={color}
   />
 )
-console.log(Input)
+
 Input.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
