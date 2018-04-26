@@ -27,8 +27,6 @@ const config = {
       root: path.join(__dirname, '..')
     }),
 
-    extractSass,
-
     new webpack.DefinePlugin({
       'process.env.SERVER_ENV': JSON.stringify(process.env.SERVER_ENV)
     }),

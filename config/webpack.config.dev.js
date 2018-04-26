@@ -7,17 +7,7 @@ const config = {
   module: {
     ...baseConfig.module,
     rules: [
-      ...baseConfig.module.rules,
-      {
-        test: /\.scss$/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader'
-        }, {
-          loader: 'sass-loader'
-        }]
-      }
+      ...baseConfig.module.rules
     ]
   },
   plugins: [
