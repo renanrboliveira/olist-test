@@ -1,9 +1,11 @@
+import theme from './../styles/theme.style'
+
 export const validateAllBarsForm = ({
   passwordOneNumber,
   passwordOneLetter,
   passwordAtLeastSixCharacteres
 }) => (
-  passwordOneNumber && passwordOneLetter && passwordAtLeastSixCharacteres ? '#1FE6A8' : '#EAEAF4'
+  passwordOneNumber && passwordOneLetter && passwordAtLeastSixCharacteres ? theme.success : theme.default
 )
 
 export const validateTwoBarsForm = ({
@@ -11,14 +13,14 @@ export const validateTwoBarsForm = ({
   passwordOneLetter,
   passwordAtLeastSixCharacteres
 }) => {
-  let color = '#EAEAF4'
+  let color = theme.default
 
   if (passwordOneNumber && passwordOneLetter && passwordAtLeastSixCharacteres) {
-    color = '#1FE6A8'
+    color = theme.success
   } else if ((passwordOneNumber && passwordAtLeastSixCharacteres) ||
-    (passwordOneLetter && passwordAtLeastSixCharacteres) ||
-    (passwordOneLetter && passwordOneNumber)) {
-    color = '#F7BC1C'
+  (passwordOneLetter && passwordAtLeastSixCharacteres) ||
+  (passwordOneLetter && passwordOneNumber)) {
+    color = theme.warning
   }
 
   return color
@@ -28,21 +30,17 @@ export const validateColorsForm = ({
   passwordOneLetter,
   passwordAtLeastSixCharacteres
 }) => {
-  let color = '#EAEAF4'
+  let color = theme.default
 
   if (passwordOneNumber && passwordOneLetter && passwordAtLeastSixCharacteres) {
-    color = '#1FE6A8'
+    color = theme.success
   } else if ((passwordOneNumber && passwordAtLeastSixCharacteres) ||
-    (passwordOneLetter && passwordAtLeastSixCharacteres) || (passwordOneLetter && passwordOneNumber)) {
-    color = '#F7BC1C'
+    (passwordOneLetter && passwordAtLeastSixCharacteres) ||
+    (passwordOneLetter && passwordOneNumber)) {
+    color = theme.warning
   } else if (passwordOneNumber || passwordOneLetter || passwordAtLeastSixCharacteres) {
-    color = '#F79682'
+    color = theme.danger
   }
 
   return color
 }
-
-export const isNumber = () => {}
-export const isEmail = () => {}
-export const isLetterUpCase = () => {}
-export const isAtLeastSixCharactere = () => {}

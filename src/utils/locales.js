@@ -5,7 +5,7 @@ export const form = {
   password: 'Senha',
   passwordConfirm: 'Confirmar senha',
   labelButtonRegister: 'Criar conta',
-  fieldRequired: 'Ess campo é obrigatório',
+  fieldRequired: 'Esse campo é obrigatório',
   invalidEmail: 'E-mail inválido',
   atLeastOneNumber: 'Pelo menos 1 número',
   atLeastOneLetter: 'Pelo menos 1 letra maiúscula',

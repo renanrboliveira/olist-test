@@ -205,8 +205,9 @@ injectGlobal`
     display: none;
   }
 
- body {
+  html, body, body > #app {
     font-family: Soleil, sans-serif;
     color: #696D8C;
+    height: 100%;
   }
 `

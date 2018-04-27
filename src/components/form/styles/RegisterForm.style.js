@@ -1,25 +1,9 @@
 import styled, { css } from 'styled-components'
 
-export const wiggle = css`
-  will-change: transform;
-  animation-name: wiggle;
-  animation-duration: 150ms;
-  animation-iteration-count: 4;
-  @keyframes wiggle {
-    33% {
-      transform: rotateZ(1deg);
-    }
-    to {
-      transform: rotateZ(-1deg);
-    }
-  }
-`
-
 export const Form = styled.form`
   > input:last-child {
     margin-bottom: 2rem;
   }
-  ${props => !props.isValid && wiggle}
 `
 
 export const HeaderForm = styled.div`
@@ -35,7 +19,6 @@ export const TitleForm = styled.h2`
 export const WrapperForm = styled.div`
   background-color: #FFF;
   border: 3px solid #F2F2F2;
-  height: 95%;
   width: 100%;
   max-width: 32.19rem;
   padding: 3.75rem 4.375rem 3rem;
