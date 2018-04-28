@@ -7,7 +7,6 @@ import Routes from './routes/Routes'
 import theme from './styles/theme.style'
 
 const supportsHistory = 'pushState' in window.history
-
 const App = () => (
   <Router forceRefresh={!supportsHistory} keyLength={12}>
     <ThemeProvider theme={theme}>

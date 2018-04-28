@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from 'enzyme'
-import InputGeneral from './../InputGeneral'
+import Input from './../Input'
 
-describe('(Component) InputGeneral', () => {
+describe('(Element) Input', () => {
   it('should have render whithout crash', () => {
-    const wrapper = render(<InputGeneral />)
+    const wrapper = render(<Input />)
     expect(wrapper).toHaveLength(1)
   })
 })

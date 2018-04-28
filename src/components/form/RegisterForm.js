@@ -8,11 +8,12 @@ import { form } from './../../utils/locales'
 import {
   validateColorsForm,
   validateTwoBarsForm,
-  validateAllBarsForm
+  validateAllBarsForm,
+  validaInputColor
 } from './../../utils/validatesForm'
-import ButtoGeneral from './../general/ButtonGeneral'
-import InputGeneral from './../general/InputGeneral'
-import LabelGeneral from './../general/LabelGeneral'
+import Button from './../elements/Button'
+import Input from './../elements/Input'
+import Label from './../elements/Label'
 
 import {
   Form,
@@ -29,10 +30,6 @@ import {
   BarItemTwoValidationForm,
   BarItemThreeValidationForm
 } from './styles/RegisterForm.style'
-
-const validaInputColor = (erro, value) => (
-  erro ? '#F79682' : value !== '' ? '#1FE6A8' : ''
-)
 
 const InnerForm = ({
   values,
@@ -52,12 +49,11 @@ const InnerForm = ({
     passwordOneLetter,
     passwordAtLeastSixCharacteres
   } = errors
-  console.log(touched.fullName, errors.fullName)
   return (
     <Form onSubmit={handleSubmit} error={isValid}>
       <FieldForm>
-        <LabelGeneral name='fullName'>{form.fullname}</LabelGeneral>
-        <InputGeneral
+        <Label name='fullName'>{form.fullname}</Label>
+        <Input
           name='fullName'
           handleChange={handleChange}
           handleBlur={handleBlur}
@@ -72,8 +68,8 @@ const InnerForm = ({
         }
       </FieldForm>
       <FieldForm>
-        <LabelGeneral name='email'>{form.email}</LabelGeneral>
-        <InputGeneral
+        <Label name='email'>{form.email}</Label>
+        <Input
           name='email'
           handleChange={handleChange}
           handleBlur={handleBlur}
@@ -88,8 +84,8 @@ const InnerForm = ({
         }
       </FieldForm>
       <FieldForm style={{marginBottom: '.5rem'}}>
-        <LabelGeneral name='password'>{form.password}</LabelGeneral>
-        <InputGeneral
+        <Label name='password'>{form.password}</Label>
+        <Input
           type='password'
           name='password'
           handleChange={handleChange}
@@ -121,12 +117,12 @@ const InnerForm = ({
         </ItemValidationOneLetter>
       </ListValidation>
       <FieldForm last>
-        <LabelGeneral name='passwordConfirm'>{form.passwordConfirm}</LabelGeneral>
-        <InputGeneral
+        <Label name='passwordConfirm'>{form.passwordConfirm}</Label>
+        <Input
           type='password'
           name='passwordConfirm'
-          handleChange={handleChange}
-          handleBlur={handleBlur}
+          onChange={handleChange}
+          onBlur={handleBlur}
           value={values.passwordConfirm}
           color={validaInputColor(errorPasswordConfirm, values.passwordConfirm)}
         />
@@ -137,9 +133,9 @@ const InnerForm = ({
           </MessageValidationForm>
         }
       </FieldForm>
-      <ButtoGeneral type='submit' disabled={isSubmitting}>
-        Criar conta
-      </ButtoGeneral>
+      <Button block isSuccess type='submit' disabled={isSubmitting}>
+        {form.labelButtonRegister}
+      </Button>
     </Form>
   )
 }

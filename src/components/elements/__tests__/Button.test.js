@@ -1,10 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ButtonGeneral from './../ButtonGeneral'
+import Button from './../Button'
 
-describe('(Component) ButtonGEneral', () => {
+describe('(Element) Button', () => {
   it('should have renders withour crash', () => {
-    const wrapper = shallow(<ButtonGeneral />)
+    const wrapper = shallow(<Button />)
     expect(wrapper).toHaveLength(1)
   })
 })

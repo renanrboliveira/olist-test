@@ -44,3 +44,7 @@ export const validateColorsForm = ({
 
   return color
 }
+
+export const validaInputColor = (erro, value) => (
+  erro ? theme.danger : value !== '' ? theme.success : ''
+)

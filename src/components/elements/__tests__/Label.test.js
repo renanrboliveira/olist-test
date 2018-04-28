@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import LabelGeneral from '../LabelGeneral'
+import Label from '../Label'
 
-describe('(Component) LabelGeneral', () => {
+describe('(Element) Label', () => {
   it('should have renders without crash', () => {
-    const wrapper = shallow(<LabelGeneral />)
+    const wrapper = shallow(<Label />)
     expect(wrapper).toHaveLength(1)
   })
 })
