@@ -11,15 +11,11 @@ import { ButtonStyle } from './styles/Button.style'
 const Button = ({
   children,
   block,
-  success,
-  warning,
-  danger
+  color
 }) => (
   <ButtonStyle
     block={block}
-    success={success}
-    warning={warning}
-    danger={danger}>
+    color={color}>
     {children}
   </ButtonStyle>
 )
@@ -29,12 +25,8 @@ Button.propTypes = {
   children: PropTypes.string,
   /** full size Button */
   block: PropTypes.bool,
-  /** color success Button */
-  success: PropTypes.bool,
-  /** color warning Button */
-  warning: PropTypes.bool,
-  /** color danger Button */
-  danger: PropTypes.bool
+  /** colors buttons Button */
+  color: PropTypes.string
 }
 
 export default Button

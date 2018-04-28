@@ -11,5 +11,6 @@ module.exports = {
   showUsage: true,
   styleguideComponents: {
     Wrapper: path.join(__dirname, './styleguide/ThemeWrapper')
-  }
+  },
+  ignore: ['**/__tests__/**', '**/*.style.js']
 }

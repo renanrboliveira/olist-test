@@ -3,16 +3,16 @@
 <Button>Default</Button>
 ```
 ```js
-<Button success>Sucess</Button>
+<Button color='success'>Sucess</Button>
 
 ```
 ```js
-<Button warning>Warning</Button>
+<Button color='warning'>Warning</Button>
 ```
 ```js
-<Button danger>Danger</Button>
+<Button color='danger'>Danger</Button>
 ```
 #### Block
 ```js
-<Button success block>Block</Button>
+<Button color='success' block>Block</Button>
 ```
