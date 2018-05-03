@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import { colorByProps } from './../../../utils/utils'
 
 export const InputStyle = styled.input`
-  border: 1px solid #B6B9D0;
+  border: .0625rem solid #B6B9D0;
   width: 100%;
   height: 2.75rem;
-  box-shadow: inset 0 1px 3px #B6B9D0;
+  box-shadow: inset 0 0.1875rem 0.1875rem rgba(0,0,0,0.05);
   padding: 0.875rem;
   &:focus {
     outline: 1px solid ${props => colorByProps(props)};
