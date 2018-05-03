@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { times } from 'lodash'
 import { Bar, Step } from './styles/StepsBar.style'
 
@@ -21,5 +22,16 @@ const StepsBar = ({
     }
   </Bar>
 )
+
+StepsBar.propTypes = {
+  /** size of steps */
+  size: PropTypes.number,
+  /** current define the total of steps selected */
+  current: PropTypes.number
+}
+
+StepsBar.defaultProps = {
+  size: 3
+}
 
 export default StepsBar

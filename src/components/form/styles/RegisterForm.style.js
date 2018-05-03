@@ -25,7 +25,7 @@ export const WrapperForm = styled.div`
 `
 
 export const FieldForm = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   position: relative;
   ${props => props.last && css`
     margin-bottom: 2rem;

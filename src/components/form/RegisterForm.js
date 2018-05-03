@@ -14,7 +14,8 @@ import {
   colorByErrorValuePassword,
   isNumber,
   isLetterUppercase,
-  isSixCharacteres
+  isSixCharacteres,
+  isEmail
 } from './../../utils/utils'
 
 import {
@@ -113,11 +114,6 @@ const MyForm = withFormik({
   validate: (values, props) => {
     const errors = { validationRules: [] }
 
-    // refactor
-    errors.passwordOneNumber = /[0-9]/.test(values.password)
-    errors.passwordOneLetter = /[A-Z]/.test(values.password)
-    errors.passwordAtLeastSixCharacteres = /.{6,}/.test(values.password)
-
     if (isNumber(values.password)) {
       errors.validationRules.push(form.atLeastOneNumber)
     }
@@ -136,9 +132,11 @@ const MyForm = withFormik({
         message: form.fieldRequired
       }]
     }
+
     if (!values.password) {
       errors.password = []
     }
+
     if (!values.passwordConfirm) {
       errors.passwordConfirm = [{
         color: 'danger',
@@ -150,14 +148,13 @@ const MyForm = withFormik({
         message: form.passwordDontMatch
       }]
     }
+
     if (!values.email) {
       errors.email = [{
         color: 'danger',
         message: form.fieldRequired
       }]
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
+    } else if (!isEmail(values.email)) {
       errors.email = [{
         color: 'danger',
         message: form.invalidEmail

@@ -29,3 +29,5 @@ export const isNumber = value => /[0-9]/.test(value)
 export const isLetterUppercase = value => /[A-Z]/.test(value)
 
 export const isSixCharacteres = value => /.{6,}/.test(value)
+
+export const isEmail = value => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
