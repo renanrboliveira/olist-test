@@ -8,7 +8,7 @@ export const InputStyle = styled.input`
   box-shadow: inset 0 0.1875rem 0.1875rem rgba(0,0,0,0.05);
   padding: 0.875rem;
   &:focus {
-    outline: 1px solid ${props => colorByProps(props)};
+    outline: 1px solid ${props => colorByProps(props) === '#EAEAF4' ? '#0A1F9C' : colorByProps(props)};
   }
   border-color: ${props => colorByProps(props)};
 `
