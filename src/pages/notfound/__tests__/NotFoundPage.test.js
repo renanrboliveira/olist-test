@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import NotFoundPage from '../NotFoundPage'
+import NotFoundPage from '../index'
 
 const wrapper = shallow(<NotFoundPage />)
 

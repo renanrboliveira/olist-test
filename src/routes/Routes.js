@@ -3,7 +3,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import { publicRoutes } from './pathUrls'
-import NotFoundPage from '../pages/NotFoundPage'
+import NotFoundPage from '../pages/notfound'
 
 const Routes = () => {
   const setRoute = route =>

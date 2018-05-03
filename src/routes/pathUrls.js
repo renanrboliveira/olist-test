@@ -1,5 +1,5 @@
 
-import Register from '../pages/RegisterPage'
+import Register from '../pages/register'
 
 export const publicRoutes = [
   {

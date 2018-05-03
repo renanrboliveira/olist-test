@@ -12,7 +12,7 @@ import {
 
 const ValidationRules = ({ rules, currentRules }) => (
   <ValidationRulesStyle>
-    {rules.map((rule, index) =>
+    {rules && rules.map((rule, index) =>
       <ValidationRuleStyle
         key={index}
         color={currentRules !== undefined && currentRules.includes(rule)
