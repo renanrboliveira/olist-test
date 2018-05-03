@@ -32,16 +32,6 @@ export const FieldForm = styled.div`
   `}
 `
 
-export const MessageValidationForm = styled.div`
-  display: inline-block;
-  font-size: .75rem;
-  color: #F79682;
-  position: absolute;
-  bottom: -1.25rem;
-  left: 0;
-  transition: color .15s cubic-bezier(.215,.61,.355,1);
-`
-
 export const BarValidationForm = styled.div`
   display: flex;
   justify-content: space-between;

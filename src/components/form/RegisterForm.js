@@ -5,15 +5,11 @@ import { isEmpty } from 'lodash'
 import Logotype from './../../assets/logotype.svg'
 
 import { form } from './../../utils/locales'
-import {
-  validateColorsForm,
-  validateTwoBarsForm,
-  validateAllBarsForm,
-  validaInputColor
-} from './../../utils/validatesForm'
+import { colorByErrorValue, colorByErrorValuePassword } from './../../utils/utils'
 import Button from './../elements/Button'
 import Input from './../elements/Input'
 import Label from './../elements/Label'
+import StepsBar from './../elements/StepsBar'
 
 import {
   Form,
@@ -23,12 +19,7 @@ import {
   ListValidation,
   ItemValidationOneLetter,
   ItemValidationOneNumber,
-  ItemValidationSixLetter,
-  MessageValidationForm,
-  BarValidationForm,
-  BarItemOneValidationForm,
-  BarItemTwoValidationForm,
-  BarItemThreeValidationForm
+  ItemValidationSixLetter
 } from './styles/RegisterForm.style'
 
 const InnerForm = ({
@@ -38,67 +29,54 @@ const InnerForm = ({
   handleChange,
   handleBlur,
   handleSubmit,
-  isSubmitting,
-  isValid
+  isSubmitting
 }) => {
-  const errorFullName = touched.fullName && errors.fullName
-  const errorEmail = touched.email && errors.email
-  const errorPasswordConfirm = touched.passwordConfirm && errors.passwordConfirm
   const {
     passwordOneNumber,
     passwordOneLetter,
     passwordAtLeastSixCharacteres
   } = errors
+
   return (
-    <Form onSubmit={handleSubmit} error={isValid}>
+    <Form onSubmit={handleSubmit}>
       <FieldForm>
         <Label name='fullName'>{form.fullname}</Label>
         <Input
           name='fullName'
-          handleChange={handleChange}
-          handleBlur={handleBlur}
+          onChange={handleChange}
+          onBlur={handleBlur}
           value={values.fullName}
-          color={validaInputColor(errorFullName, values.fullName)}
+          color={colorByErrorValue(errors.fullName, values.fullName)}
+          help={errors.fullName}
         />
-        {
-          errorFullName &&
-          <MessageValidationForm>
-            {errors.fullName}
-          </MessageValidationForm>
-        }
       </FieldForm>
       <FieldForm>
         <Label name='email'>{form.email}</Label>
         <Input
           name='email'
-          handleChange={handleChange}
-          handleBlur={handleBlur}
+          onChange={handleChange}
+          onBlur={handleBlur}
           value={values.email}
-          color={validaInputColor(errorEmail, values.email)}
+          color={colorByErrorValue(errors.email, values.email)}
+          help={errors.email}
         />
-        {
-          errorEmail &&
-          <MessageValidationForm>
-            {errors.email}
-          </MessageValidationForm>
-        }
       </FieldForm>
       <FieldForm style={{marginBottom: '.5rem'}}>
         <Label name='password'>{form.password}</Label>
         <Input
           type='password'
           name='password'
-          handleChange={handleChange}
-          handleBlur={handleBlur}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          color={colorByErrorValuePassword(errors.password, values.password, errors.currentStepBar)}
           value={values.password}
-          color={validateColorsForm(errors)}
+          help={errors.password}
         />
       </FieldForm>
-      <BarValidationForm>
-        <BarItemOneValidationForm color={validateColorsForm(errors)} />
-        <BarItemTwoValidationForm color={validateTwoBarsForm(errors)} />
-        <BarItemThreeValidationForm color={validateAllBarsForm(errors)} />
-      </BarValidationForm>
+      <StepsBar
+        current={errors.currentStepBar}
+        size={3}
+      />
       <ListValidation>
         <ItemValidationSixLetter
           isEmpty={isEmpty(values.password)}
@@ -124,16 +102,11 @@ const InnerForm = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.passwordConfirm}
-          color={validaInputColor(errorPasswordConfirm, values.passwordConfirm)}
+          color={colorByErrorValue(errors.passwordConfirm, values.passwordConfirm)}
+          help={errors.passwordConfirm}
         />
-        {
-          errorPasswordConfirm &&
-          <MessageValidationForm>
-            {errors.passwordConfirm}
-          </MessageValidationForm>
-        }
       </FieldForm>
-      <Button block isSuccess type='submit' disabled={isSubmitting}>
+      <Button block color='success' type='submit' disabled={isSubmitting}>
         {form.labelButtonRegister}
       </Button>
     </Form>
@@ -153,27 +126,52 @@ const MyForm = withFormik({
   }),
 
   validate: (values, props) => {
-    const errors = {}
+    const errors = { currentStepBar: 0 }
 
+    // refactor
     errors.passwordOneNumber = /[0-9]/.test(values.password)
     errors.passwordOneLetter = /[A-Z]/.test(values.password)
     errors.passwordAtLeastSixCharacteres = /.{6,}/.test(values.password)
 
+    if (/[0-9]/.test(values.password)) {
+      errors.currentStepBar = errors.currentStepBar + 1
+    }
+
+    if (/[A-Z]/.test(values.password)) {
+      errors.currentStepBar = errors.currentStepBar + 1
+    }
+
+    if (/.{6,}/.test(values.password)) {
+      errors.currentStepBar = errors.currentStepBar + 1
+    }
+
     if (!values.fullName) {
-      errors.fullName = form.fieldRequired
+      errors.fullName = [{
+        color: 'danger',
+        message: form.fieldRequired
+      }]
     }
     if (!values.password) {
-      errors.password = form.fieldRequired
+      errors.password = []
     }
     if (!values.passwordConfirm) {
-      errors.passwordConfirm = form.fieldRequired
+      errors.passwordConfirm = [{
+        color: 'danger',
+        message: form.fieldRequired
+      }]
     }
     if (!values.email) {
-      errors.email = form.fieldRequired
+      errors.email = [{
+        color: 'danger',
+        message: form.fieldRequired
+      }]
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     ) {
-      errors.email = form.invalidEmail
+      errors.email = [{
+        color: 'danger',
+        message: form.invalidEmail
+      }]
     }
     return errors
   },

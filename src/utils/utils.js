@@ -13,3 +13,13 @@ export const colorByProps = (props) => {
 
   return colors ? colors.color : props.theme.default
 }
+
+export const colorByErrorValue = (error, value) => (
+  error ? 'danger' : value ? 'success' : ''
+)
+export const colorByErrorValuePassword = (error, value, current) => (
+  error ? 'danger' : value && current === 1
+    ? 'danger' : value && current === 2
+      ? 'warning' : value && current === 3
+        ? 'success' : ''
+)

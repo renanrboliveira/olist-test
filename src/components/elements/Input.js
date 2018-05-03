@@ -11,7 +11,9 @@ const Input = ({
   name,
   type,
   color,
-  help
+  help,
+  onChange,
+  onBlur
 }) => (
   <div>
     <InputStyle
@@ -19,9 +21,11 @@ const Input = ({
       type={type}
       name={name}
       color={color}
+      onChange={onChange}
+      onBlur={onBlur}
     />
-    {help && help.map((obj) => (
-      <MessageStyle color={obj.color}>
+    {help && help.map((obj, index) => (
+      <MessageStyle color={obj.color} key={index}>
         {obj.message}
       </MessageStyle>
     ))}
