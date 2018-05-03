@@ -7,8 +7,4 @@ describe('(Element) Button', () => {
     const wrapper = shallow(<Button />)
     expect(wrapper).toHaveLength(1)
   })
-  it('should have renders block', () => {
-    const wrapper = shallow(<Button block />)
-    expect(wrapper).toHaveLength(1)
-  })
 })
