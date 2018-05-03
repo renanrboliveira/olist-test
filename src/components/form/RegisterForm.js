@@ -1,25 +1,27 @@
 import React from 'react'
 import { withFormik } from 'formik'
-import { isEmpty } from 'lodash'
 
 import Logotype from './../../assets/logotype.svg'
 
 import { form } from './../../utils/locales'
-import { colorByErrorValue, colorByErrorValuePassword } from './../../utils/utils'
 import Button from './../elements/Button'
 import Input from './../elements/Input'
 import Label from './../elements/Label'
 import StepsBar from './../elements/StepsBar'
+import ValidationRules from './../elements/ValidationRules'
+import {
+  colorByErrorValue,
+  colorByErrorValuePassword,
+  isNumber,
+  isLetterUppercase,
+  isSixCharacteres
+} from './../../utils/utils'
 
 import {
   Form,
   WrapperForm,
   FieldForm,
-  HeaderForm,
-  ListValidation,
-  ItemValidationOneLetter,
-  ItemValidationOneNumber,
-  ItemValidationSixLetter
+  HeaderForm
 } from './styles/RegisterForm.style'
 
 const InnerForm = ({
@@ -31,12 +33,7 @@ const InnerForm = ({
   handleSubmit,
   isSubmitting
 }) => {
-  const {
-    passwordOneNumber,
-    passwordOneLetter,
-    passwordAtLeastSixCharacteres
-  } = errors
-
+  const errorValidationRules = errors.validationRules && errors.validationRules.length
   return (
     <Form onSubmit={handleSubmit}>
       <FieldForm>
@@ -68,32 +65,20 @@ const InnerForm = ({
           name='password'
           onChange={handleChange}
           onBlur={handleBlur}
-          color={colorByErrorValuePassword(errors.password, values.password, errors.currentStepBar)}
+          color={colorByErrorValuePassword(errors.password, values.password, errorValidationRules)}
           value={values.password}
           help={errors.password}
         />
       </FieldForm>
       <StepsBar
-        current={errors.currentStepBar}
+        current={errorValidationRules}
         size={3}
       />
-      <ListValidation>
-        <ItemValidationSixLetter
-          isEmpty={isEmpty(values.password)}
-          error={passwordAtLeastSixCharacteres}>
-          {form.atLeastSixCharacteres}
-        </ItemValidationSixLetter>
-        <ItemValidationOneNumber
-          isEmpty={isEmpty(values.password)}
-          error={passwordOneNumber}>
-          {form.atLeastOneNumber}
-        </ItemValidationOneNumber>
-        <ItemValidationOneLetter
-          isEmpty={isEmpty(values.password)}
-          error={passwordOneLetter}>
-          {form.atLeastOneLetter}
-        </ItemValidationOneLetter>
-      </ListValidation>
+      <ValidationRules rules={[
+        form.atLeastSixCharacteres,
+        form.atLeastOneLetter,
+        form.atLeastOneNumber
+      ]} currentRules={errors.validationRules} />
       <FieldForm last>
         <Label name='passwordConfirm'>{form.passwordConfirm}</Label>
         <Input
@@ -126,23 +111,23 @@ const MyForm = withFormik({
   }),
 
   validate: (values, props) => {
-    const errors = { currentStepBar: 0 }
+    const errors = { validationRules: [] }
 
     // refactor
     errors.passwordOneNumber = /[0-9]/.test(values.password)
     errors.passwordOneLetter = /[A-Z]/.test(values.password)
     errors.passwordAtLeastSixCharacteres = /.{6,}/.test(values.password)
 
-    if (/[0-9]/.test(values.password)) {
-      errors.currentStepBar = errors.currentStepBar + 1
+    if (isNumber(values.password)) {
+      errors.validationRules.push(form.atLeastOneNumber)
     }
 
-    if (/[A-Z]/.test(values.password)) {
-      errors.currentStepBar = errors.currentStepBar + 1
+    if (isLetterUppercase(values.password)) {
+      errors.validationRules.push(form.atLeastOneLetter)
     }
 
-    if (/.{6,}/.test(values.password)) {
-      errors.currentStepBar = errors.currentStepBar + 1
+    if (isSixCharacteres(values.password)) {
+      errors.validationRules.push(form.atLeastSixCharacteres)
     }
 
     if (!values.fullName) {
@@ -158,6 +143,11 @@ const MyForm = withFormik({
       errors.passwordConfirm = [{
         color: 'danger',
         message: form.fieldRequired
+      }]
+    } else if (values.passwordConfirm !== values.password) {
+      errors.passwordConfirm = [{
+        color: 'danger',
+        message: form.passwordDontMatch
       }]
     }
     if (!values.email) {

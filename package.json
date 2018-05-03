@@ -11,7 +11,10 @@
     "lint": "eslint src",
     "format": "prettier-standard 'src/**/*.js'",
     "precommit": "npm test",
-    "prepush": "npm run lint && npm test"
+    "prepush": "npm run lint && npm test",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
+
   },
   "repository": {
     "type": "git",

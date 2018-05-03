@@ -23,3 +23,9 @@ export const colorByErrorValuePassword = (error, value, current) => (
       ? 'warning' : value && current === 3
         ? 'success' : ''
 )
+
+export const isNumber = value => /[0-9]/.test(value)
+
+export const isLetterUppercase = value => /[A-Z]/.test(value)
+
+export const isSixCharacteres = value => /.{6,}/.test(value)
