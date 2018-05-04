@@ -11,7 +11,7 @@ export const HeaderForm = styled.div`
   text-align: center;
 `
 
-export const TitleForm = styled.h2`
+export const TitleForm = styled.h3`
   font-size: 1.375rem;
   color: #312F4F;
 `

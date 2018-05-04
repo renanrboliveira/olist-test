@@ -22,7 +22,8 @@ import {
   Form,
   WrapperForm,
   FieldForm,
-  HeaderForm
+  HeaderForm,
+  TitleForm
 } from './styles/RegisterForm.style'
 
 const InnerForm = ({
@@ -178,7 +179,7 @@ const RegisterForm = () => (
   <WrapperForm>
     <HeaderForm>
       <img src={Logotype} />
-      <h3>{form.title}</h3>
+      <TitleForm>{form.title}</TitleForm>
     </HeaderForm>
     <MyForm />
   </WrapperForm>
