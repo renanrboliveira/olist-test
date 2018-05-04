@@ -36,6 +36,11 @@ const InnerForm = ({
   isSubmitting
 }) => {
   const errorValidationRules = errors.validationRules && errors.validationRules.length
+  const errorFullName = touched.fullName || values.fullName !== ''
+  const errorEmail = touched.email || values.email !== ''
+  const errorPassword = touched.password || values.password !== ''
+  const errorPasswordConfirm = touched.passwordConfirm || values.passwordConfirm !== ''
+
   return (
     <Form onSubmit={handleSubmit}>
       <FieldForm>
@@ -45,8 +50,8 @@ const InnerForm = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.fullName}
-          color={(touched.fullName || values.fullName !== '') ? colorByErrorValue(errors.fullName, values.fullName) : ''}
-          help={(touched.fullName || values.fullName !== '') ? errors.fullName : []}
+          color={colorByErrorValue(errors.fullName, values.fullName, touched.fullName)}
+          help={errorFullName ? errors.fullName : []}
         />
       </FieldForm>
       <FieldForm>
@@ -56,8 +61,8 @@ const InnerForm = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.email}
-          color={(touched.email || values.email !== '') ? colorByErrorValue(errors.email, values.email) : ''}
-          help={(touched.email || values.email !== '') ? errors.email : []}
+          color={colorByErrorValue(errors.email, values.email, touched.email)}
+          help={errorEmail ? errors.email : []}
         />
       </FieldForm>
       <FieldForm style={{marginBottom: '.5rem'}}>
@@ -68,8 +73,8 @@ const InnerForm = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.password}
-          color={(touched.password || values.password !== '') ? colorByErrorValuePassword(errors.password, values.password, errorValidationRules) : ''}
-          help={(touched.password || values.password !== '') ? errors.password : []}
+          color={errorPassword && colorByErrorValuePassword(errors.password, values.password, errorValidationRules)}
+          help={errorPassword ? errors.password : []}
         />
       </FieldForm>
       <StepsBar
@@ -88,8 +93,8 @@ const InnerForm = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.passwordConfirm}
-          color={(touched.passwordConfirm || values.passwordConfirm !== '') ? colorByErrorValue(errors.passwordConfirm, values.passwordConfirm) : ''}
-          help={(touched.passwordConfirm || values.passwordConfirm !== '') ? errors.passwordConfirm : []}
+          color={colorByErrorValue(errors.passwordConfirm, values.passwordConfirm, touched.passwordConfirm)}
+          help={errorPasswordConfirm ? errors.passwordConfirm : []}
         />
       </FieldForm>
       <Button block color='success' type='submit' disabled={isSubmitting}>
