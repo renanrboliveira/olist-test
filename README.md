@@ -1,29 +1,9 @@
-Demo: https://staging-react-redux-boilerplate.surge.sh
-
-Goals:
-- [ ] Full README
-- [ ] Original boilerplate name
-- [x] Redux
-- [x] Redux Saga
-- [x] App and Vendor chunks
-- [x] CircleCI preconfig
-- [x] Jest
-- [x] Husky
-- [x] Js Lint (Eslint, Prettier, Standard)
-- [ ] Css Lint
-- [ ] Error tracker with docs about
-- [x] Bundle Analyzer
-- [ ] Doc about best practices
-- [ ] Doc about the component patterns
-- [ ] Doc about the route system
-- [ ] Doc about the webpack config
-- [ ] Doc about environment variables
-- [ ] Doc about contributions
-- [ ] Doc about the white box tests
+* Demo: https://olist-test.netlify.com/
+* Styleguide: https://olist-test-styleguide.netlify.com/
 
 # Project Title
 
-One Paragraph of project description goes here
+This a test for olist
 
 ## Getting Started
 
@@ -34,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+node v8.9.0
 ```
 
 ### Installing
@@ -44,27 +24,14 @@ A step by step series of examples that tell you have to get a development env ru
 Say what the step will be
 
 ```
-Give the example
+npm install
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
 
 ```
-Give an example
+npm test
 ```
 
 ### And coding style tests
@@ -72,39 +39,26 @@ Give an example
 Explain what these tests test and why
 
 ```
-Give an example
+npm lint
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This project use circle-ci for deploy, but I used netlify for host this application.
 
 ## Built With
 
-* Dropwizard - Bla bla bla
-* Maven - Maybe
-* Atom - ergaerga
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+* React 16
+* React Router 4
+* Styled Components / theming
+* Circleci
+* Jest
+* Standard style
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Renan Oliveira** - *developer* - [Renan Oliveira](https://github.com/renanrboliveira)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
