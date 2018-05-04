@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/bb/renanrboliveira/olist-test/tree/master.svg?style=svg)](https://circleci.com/bb/renanrboliveira/olist-test/tree/master)
+
 * Demo: https://olist-test.netlify.com/
 * Styleguide: https://olist-test-styleguide.netlify.com/
 
