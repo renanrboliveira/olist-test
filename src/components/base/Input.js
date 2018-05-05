@@ -24,11 +24,11 @@ const Input = ({
       onChange={onChange}
       onBlur={onBlur}
     />
-    {help && help.map((obj, index) => (
-      <MessageStyle color={obj.color} key={index}>
-        {obj.message}
+    {help && (
+      <MessageStyle color={help.color}>
+        {help.message}
       </MessageStyle>
-    ))}
+    )}
   </div>
 )
 
@@ -40,7 +40,7 @@ Input.propTypes = {
   /** color border and focus input */
   color: PropTypes.string,
   /**  */
-  help: PropTypes.array
+  help: PropTypes.object
 }
 
 Input.defaultProps = {
