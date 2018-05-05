@@ -8,6 +8,7 @@ module.exports = {
   ],
   showCode: true,
   showUsage: true,
+  styleguideDir: '../styleguide',
   styleguideComponents: {
     Wrapper: path.join(__dirname, '../styleguide/ThemeWrapper')
   },
