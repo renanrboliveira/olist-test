@@ -37,7 +37,7 @@ describe('Utils', () => {
     const value = 'test'
     expect(colorByErrorValue(error, value)).toBe('success')
   })
-  it('should have return color empty by value empty', () => {
+  it('should have return color danger by value empty', () => {
     const error = false
     const value = ''
     expect(colorByErrorValue(error, value)).toBe('')
@@ -70,7 +70,7 @@ describe('Utils', () => {
     const error = false
     const value = ''
     const current = 0
-    expect(colorByErrorValuePassword(error, value, current)).toBe('')
+    expect(colorByErrorValuePassword(error, value, current)).toBe('danger')
   })
   it('should have verify is a number', () => {
     expect(isNumber(1)).toBe(true)
