@@ -12,9 +12,8 @@
     "format": "prettier-standard 'src/**/*.js'",
     "precommit": "npm test",
     "prepush": "npm run lint && npm test",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
-
+    "styleguide": "styleguidist server --config config/styleguide.config.js",
+    "styleguide:build": "styleguidist build --config --config config/styleguide.config.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,7 @@
   },
   "keywords": [
     "react",
-    "redux",
+    "styled-components",
     "js"
   ],
   "author": "",
@@ -65,7 +64,6 @@
     "prettier-standard": "^8.0.0",
     "react-hot-loader": "^4.1.2",
     "react-styleguidist": "^7.0.8",
-    "sass-loader": "^6.0.7",
     "standard-loader": "^6.0.1",
     "style-loader": "^0.20.2",
     "url-loader": "^1.0.1",
