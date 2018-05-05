@@ -18,10 +18,11 @@ export const colorByErrorValue = (error, value, touched) => (
   (touched || value !== '') ? error ? 'danger' : value ? 'success' : '' : ''
 )
 export const colorByErrorValuePassword = (error, value, current) => (
-  error ? 'danger' : value && current === 1
-    ? 'danger' : value && current === 2
-      ? 'warning' : value && current === 3
-        ? 'success' : ''
+  error ? 'danger' : value === ''
+    ? 'danger' : value && current === 1
+      ? 'danger' : value && current === 2
+        ? 'warning' : value && current === 3
+          ? 'success' : ''
 )
 
 export const isNumber = value => /[0-9]/.test(value)
