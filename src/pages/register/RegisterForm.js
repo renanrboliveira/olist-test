@@ -1,11 +1,11 @@
 import React from 'react'
 
 import { form } from './../../utils/locales'
-import Button from './../../components/base/Button'
-import Input from './../../components/base/Input'
-import Label from './../../components/base/Label'
-import StepsBar from './../../components/base/StepsBar'
-import ValidationRules from './../../components/base/ValidationRules'
+import Button from './../../components/base/button'
+import Input from './../../components/base/input'
+import Label from './../../components/base/label'
+import StepsBar from './../../components/base/steps-bar'
+import ValidationRules from './../../components/base/validation-rules'
 import {
   colorByErrorValue,
   colorByErrorValuePassword

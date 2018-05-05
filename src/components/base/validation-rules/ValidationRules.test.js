@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ValidationRules from '../ValidationRules'
+import ValidationRules from './index'
 
 describe('(Element) ValidationRules', () => {
   it('should have renders without crash', () => {

@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { ButtonStyle } from './styles/Button.style'
+import { ButtonStyle } from './Button.style'
 
 /**
  *
- * @example ./examples/Button.md
+ * @example ./Button.md
  */
 
 const Button = ({

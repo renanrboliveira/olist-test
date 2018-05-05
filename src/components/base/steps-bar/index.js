@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { times } from 'lodash'
-import { Bar, Step } from './styles/StepsBar.style'
+import { Bar, Step } from './StepsBar.style'
 
 /**
  *
- * @example ./examples/StepsBar.md
+ * @example ./StepsBar.md
  */
 
 const StepsBar = ({

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import {
   ValidationRulesStyle,
   ValidationRuleStyle
-} from './styles/ValidationRules.style'
+} from './ValidationRules.style'
 
 /**
  *
- * @example ./examples/ValidationRules.md
+ * @example ./ValidationRules.md
  */
 
 const ValidationRules = ({ rules, currentRules }) => (

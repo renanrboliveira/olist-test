@@ -5,6 +5,7 @@ export const ButtonStyle = styled.button`
   border: 0;
   background-color: ${props => colorByProps(props)};
   cursor: pointer;
+  font-size: 1.2rem;
   font-weight: 700;
   color: white;
   ${props => props.block && 'width: 100%'}

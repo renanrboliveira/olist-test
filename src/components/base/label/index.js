@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LabelStyle from './styles/Label.style'
+import LabelStyle from './Label.style'
 
 /**
  *
- * @example ./examples/Label.md
+ * @example ./Label.md
  */
 
 const Label = ({ children, name }) => (

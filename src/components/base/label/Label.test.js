@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Label from '../Label'
+import Label from './index'
 
 describe('(Element) Label', () => {
   it('should have renders without crash', () => {

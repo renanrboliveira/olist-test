@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import StepsBar from '../StepsBar'
+import StepsBar from './index'
 
 describe('(Element) StepsBar', () => {
   it('should have renders without crash', () => {

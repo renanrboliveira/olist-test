@@ -4,7 +4,7 @@ module.exports = {
   components: '../src/components/general/**/[A-Z]*.js',
   webpackConfig: require('./webpack.config.dev.js'),
   sections: [
-    { name: 'Elements', components: '../src/components/base/**/*.js' }
+    { name: 'Elements', components: '../src/components/base/**/index.js' }
   ],
   showCode: true,
   showUsage: true,

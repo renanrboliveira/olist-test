@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Button from './../Button'
+import Button from './index'
 
 describe('(Element) Button', () => {
   it('should have renders withour crash', () => {

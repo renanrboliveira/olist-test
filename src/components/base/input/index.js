@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { InputStyle, MessageStyle } from './styles/Input.style'
+import { InputStyle, MessageStyle } from './Input.style'
 
 /**
  *
- * @example ./examples/Input.md
+ * @example ./Input.md
  */
 
 const Input = ({

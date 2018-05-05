@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'enzyme'
-import Input from './../Input'
+import Input from './index'
 
 describe('(Element) Input', () => {
   it('should have render whithout crash', () => {
