@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-import Routes from './routes/Routes'
+import Routes from './pages/Routes'
 import theme from './styles/theme.style'
 
 const supportsHistory = 'pushState' in window.history
