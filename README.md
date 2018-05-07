@@ -4,7 +4,7 @@
 * Styleguide: https://olist-test-styleguide.netlify.com/
 * Circleci: https://circleci.com/bb/renanrboliveira/olist-test
 
-# Project Title
+# Olist test
 
 This a test for olist
 
