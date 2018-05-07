@@ -39,7 +39,8 @@ Input.propTypes = {
   type: PropTypes.string,
   /** color border and focus input */
   color: PropTypes.string,
-  /**  */
+  /** message above input and can change color(success, danger, warning, default)
+   * e.g. { color: 'success', message: 'hello world'} */
   help: PropTypes.object
 }
 

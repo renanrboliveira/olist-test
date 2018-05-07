@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-node v8.9.0
+node 8.10.0
 ```
 
 ### Installing
