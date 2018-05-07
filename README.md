@@ -42,7 +42,7 @@ npm test
 Explain what these tests test and why
 
 ```
-npm lint
+npm run lint
 ```
 
 ## Deployment
