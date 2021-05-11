@@ -74,7 +74,7 @@
   },
   "dependencies": {
     "formik": "^0.11.11",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
